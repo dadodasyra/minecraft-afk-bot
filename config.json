@@ -1,0 +1,25 @@
+{
+	"toggle":{
+
+		"autodisconnect":{
+			"toggledisconnect":"false",
+			"togglemsg":"false",
+			"msg":"J'ai actuellement moins de 3 coeurs donc jvais deco, rip, pinger moi sur discord pls"
+		},
+		"autofeed":{
+			"autofeed":"true",
+			"autofeedslot":"8"
+		}
+
+	},
+
+	"user":{
+		"username":"dadodasyra.pro@gmail.com",
+		"pass":"Aypierre2012*"
+	},
+
+	"server":{
+		"address":"histeria.fr",
+		"port":12345
+	}
+}
