@@ -26,7 +26,7 @@ apt-get install -y nodejs
 - Dans le répertore du bot via un cmd executé node bot.js
 
 **MACOS :**
-- Ptdr t'as cru quoi
+- T'as cru quoi
 
 # Commandes
 - `/autoclick [temps en ms]` Démarre un autoclick avec le temps indiqué ou 700 ms de base, /!\ L'autoclick peux taper a travers les blocks + bypass la limite de cps client + à 360°. L'autoclick tape uniquement les mobs (il vérifie l'entitée la plus proche puis vérifie si c'est un mob, dans le cas ou une autre entitée passive est plus proche du joueur le mob hostile ne sera pas tapé)
