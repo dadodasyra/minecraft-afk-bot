@@ -1,4 +1,4 @@
-# Un bot d'afk sur Minecraft Java
+# Un bot d'AFK sur Minecraft Java
 Un bot en JS utilisant mineflayer avec une config complète.
 Il contient un autoclick, un autofeed, un autodeconnect quand il a moins de 3 coeurs etc.. (configurable via le config.yml), vous pouvez d'ailleurs écrire dans le chat et consulter le chat via la console.
 
