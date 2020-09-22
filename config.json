@@ -1,6 +1,5 @@
 {
 	"toggle":{
-
 		"autodisconnect":{
 			"toggledisconnect":"false",
 			"togglemsg":"false",
@@ -10,16 +9,15 @@
 			"autofeed":"true",
 			"autofeedslot":"8"
 		}
-
 	},
 
 	"user":{
-		"username":"dadodasyra.pro@gmail.com",
-		"pass":"Aypierre2012*"
+		"username":"EMAIL",
+		"pass":"MOTDEPASSE"
 	},
 
 	"server":{
 		"address":"histeria.fr",
-		"port":12345
+		"port":"25565"
 	}
 }
