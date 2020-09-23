@@ -22,8 +22,12 @@ apt-get install -y nodejs
 - Lancer le bot dans un *screen* ou utilisant *pm2* pour éviter de devoir garder le terminal ouvert (**screen** recommandé pour Linux).
 - Dans le répertoire ou se trouve bot.js et start.sh, executé ./start.sh 
 
-**Windows (restart non-supporté):**
+**Windows (restart & auto reconnect généralement non-supporté):**
 - Dans le répertore du bot via un cmd executé node bot.js
+OU
+- Installer Cygwin
+- Accéder au répertoire du bot via Cygwin terminal `cd C:/Users/dadodasyra/Downloads` (remplacer les \ par des / si vous en avez)
+- Executé `sh start.sh` dans un screen
 
 **MACOS :**
 - T'as cru quoi
