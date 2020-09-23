@@ -1,6 +1,6 @@
 # Un bot d'AFK sur Minecraft Java
 Un bot en JS utilisant mineflayer avec une config complète.
-Il contient un autoclick, un autofeed, un autodeconnect quand il a moins de 3 coeurs etc.. (configurable via le config.yml), vous pouvez d'ailleurs écrire dans le chat et consulter le chat via la console.
+Il contient un autoclick, un autofeed, un autodeconnect quand il a moins de 3 coeurs etc.. (configurable via le config.yml), un autoreconnect lors d'une redem serveur ou d'un kick, vous pouvez d'ailleurs écrire dans le chat et consulter le chat via la console.
 
 # Installation
 **Installation de Node JS :**
@@ -37,5 +37,5 @@ apt-get install -y nodejs
 
 # Confidentialité et sécurité
 
-Utiliser ce bot uniquement sur accord du propriétaire ou d'un membre du staff d'un serveur, il contient des fonctions tel que l'autoclick qui peut être considérer comme un cheat.
-Vos identifiants ne sont strictement pas sauvegardés autre part que dans le config par le script, toute la connexion passe par mineflayer, qui lui aussi est open source et très connu.
+Veuillez utiliser ce bot uniquement sur accord du propriétaire ou d'un membre du staff du serveur, il contient des fonctions tel que l'autoclick qui a le même effet qu'un killaura qui ne sont pas forcément autorisés sur le serveur.
+Vos identifiants ne sont sauvegardés autre part que dans le config par le script, toute la connexion passe par mineflayer, qui lui aussi est open source et très connu.
