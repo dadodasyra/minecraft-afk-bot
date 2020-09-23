@@ -1,19 +1,25 @@
 {
 	"toggle":{
 		"autodisconnect":{
-			"toggledisconnect":"false",
-			"togglemsg":"false",
-			"msg":"J'ai actuellement moins de 3 coeurs donc jvais deco, rip, pinger moi sur discord pls"
+			"toggledisconnect":true,
+			"togglemsg":false,
+			"msg":"J'ai actuellement moins de 3 coeurs donc jvais deco, rip, pinger moi sur discord pls",
+
+			"_comment":"Les coeurs sont entre 0 et 20",
+			"health":5
 		},
 		"autofeed":{
-			"autofeed":"true",
-			"autofeedslot":"8"
-		}
+			"autofeed":true,
+			"_comment":"Slots entre 0 et 8",
+			"autofeedslot":8
+		},
+		"_comment":"Autoreconnect lors d'un kick ou d'une redem serveur",
+		"autoreconnect": true
 	},
 
 	"user":{
-		"username":"EMAIL",
-		"pass":"MOTDEPASSE"
+		"username":"MAIL",
+		"pass":"MDP"
 	},
 
 	"server":{
