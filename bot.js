@@ -3,7 +3,7 @@
 const mf = require('mineflayer');
 const readline = require('readline');
 const fs = require('fs');
-const { isNull, isNullOrUndefined, isNumber } = require('util');
+const { isNullOrUndefined, isNumber } = require('util');
 
 const rawJson = fs.readFileSync("config.json");
 const config = JSON.parse(rawJson);
@@ -12,6 +12,12 @@ var num = 0;
 var interval = null;
 var eating = false;
 var eatingslot
+var options = {
+	host: config.server.address,
+	port: config.server.port,
+	username: config.user.username,
+	password: (process.argv[2] ? process.argv[2] : config.user.pass)
+}
 
 if(!process.argv[2] && !config.user.pass){
 	console.log("bot.js - AFK bot");
@@ -19,58 +25,71 @@ if(!process.argv[2] && !config.user.pass){
 	return;
 }
 
+const bot = mf.createBot(options);
+
 const rl = readline.createInterface({
 	input: process.stdin,
 	output: process.stdout
-});
-
-const bot = mf.createBot({
-	host: config.server.address,
-	port: config.server.port,
-	username: config.user.username,
-	password: (process.argv[2] ? process.argv[2] : config.user.pass)
 });
 
 bot.on('chat', (username, message) => {
 	if (username === bot.username) return;
 
 	console.log(username + ": " + message);
-/*
-	if(config.keyword.sleep.find(elmt => message.search(elmt) != -1)){
-		bot.chat(config.message.sleep);
+/* Désactivé les réponses automatique au message dans le chat, concernant par exemple pour dormir le bot peux deco ou répondre avec les tps
+	if(message == "sleep"){
+		bot.chat("Je me reco dans 5 secondes");
 		bot.quit();
 		process.exit();
 		return;
 	}
 
-	if(config.keyword.name.find(elmt => message.search(elmt) != -1)){
-		bot.chat(config.message.afk);
+	if(message == "afk"){
+		bot.chat("Je suis afk !");
 	}
 
-	if(config.keyword.tps.find(elmt => message.search(elmt) != -1)){
+	if(message == "tps"){
 		bot.chat("Voici les tps incroyable : "+bot.getTps())
 	}*/
 });
 
-bot.on('login', () => {
-	console.log("Connecté !");
-});
-
-/*bot.on('playerJoined', (player) => { Tu peux l'activer si tu veux
+/*bot.on('playerJoined', (player) => { Tu peux l'activer si tu veux en supprimant le /* et * /
 	bot.chat("Hey " + player.username + "! Je suis un bot pas ouf, me déranger pas");
 })*/
 
+bot.on('error', function(err) {
+	console.log('Erreur : ' + err.errno);
+	if (err.code == undefined) {
+		console.log('Mauvais identifiant, serveur inaccesible ou autre erreur non défini');
+	}
+	console.log('Reconnexion dans 60 secondes, Ctrl+C pour annuler');
+	process.exit(60)
+});
+
+bot.on('end', () => {
+	process.exit(60);
+})
+
+bot.on('login', () => {
+	console.log("| Connexion");
+});
+
+bot.on('spawn', () => {
+	console.log("| Connecté")
+});
+
 bot.on('health', () => {
-	if(bot.health < 3 && config.toggle.autodisconnect.toggledisconnect == false){
-				if(config.toggle.autodisconnect.togglemsg){
-					bot.chat(config.toggle.autodisconnect.msg)
-					console.debug(config.toggle.autodisconnect.msg)
- 				}
+	if(bot.health < config.toggle.autodisconnect.health && config.toggle.autodisconnect.toggledisconnect){
+		console.log("Deconnexion car plus de vie")
+		if(config.toggle.autodisconnect.togglemsg){
+			bot.chat(config.toggle.autodisconnect.msg);
+			console.log(bot.username+": "+config.toggle.autodisconnect.msg);
+		}
 		bot.quit();
 		process.exit(1);
 	}
 
-	if(bot.food < 3 && !eating && config.toggle.autofeed.autofeed == false){
+	if(bot.food < 3 && !eating && config.toggle.autofeed.autofeed){
 		eating = true;
 		eatingslot = bot.quickBarSlot;
 		bot.setQuickBarSlot(config.toggle.autofeed.autofeedslot);
@@ -83,13 +102,11 @@ rl.on("line", input =>{
 	if(input == "/quit"){
 		bot.quit();
 		process.exit(1);
-		return;
 	}
 
 	if(input == "/reconnect"){
 		bot.quit();
 		process.exit();
-		return;
 	}
 
 	if(array[0] == "/autoclick"){
