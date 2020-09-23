@@ -24,7 +24,7 @@ apt-get install -y nodejs
 
 **Windows (restart & auto reconnect généralement non-supporté):**
 - Dans le répertore du bot via un cmd executé node bot.js
-OU
+OU *Pour l'auto connect et le restart*
 - Installer Cygwin
 - Accéder au répertoire du bot via Cygwin terminal `cd C:/Users/dadodasyra/Downloads` (remplacer les \ par des / si vous en avez)
 - Executé `sh start.sh` dans un screen
