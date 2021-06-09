@@ -2,11 +2,8 @@
 
 const mf = require('mineflayer');
 const readline = require('readline');
-const fs = require('fs');
-const { isNullOrUndefined, isNumber } = require('util');
 
-const rawJson = fs.readFileSync("config.json");
-const config = JSON.parse(rawJson);
+const config = require('./config.json');
 
 var num = 0;
 var interval = null;
@@ -110,10 +107,10 @@ rl.on("line", input =>{
 	}
 
 	if(array[0] == "/autoclick"){
-		if(isNullOrUndefined(array[1]) || isNumber(array[1])){
+		if(!array[1] || Number.isInteger(array[1])){
 			array[1] = 700;
 		}
-		if(isNullOrUndefined(interval)){
+		if(!interval){
 			autoclick = null;
 			interval = setInterval(autofunc, array[1]);
 			console.log("| Autoclick started")
@@ -127,7 +124,7 @@ rl.on("line", input =>{
 	}
 
 	if(input == "/stopautoclick"){
-		if(isNullOrUndefined(interval)){
+		if(!interval){
 			console.log("| Il n'y a actuellement aucun autoclick d'actif");
 			return;
 		}
