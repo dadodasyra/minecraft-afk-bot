@@ -9,9 +9,9 @@ Il contient un autoclick, un autofeed, un autodeconnect quand il a moins de 3 co
 ```
 curl -sL https://deb.nodesource.com/setup_14.x | bash -
 apt-get install -y nodejs
-npm i readline mineflayer, util, fs
+npm i readline mineflayer
 ```
-**Le code nécessite les packages suivants :** FS, READLINE, MINEFLAYER, UTIL (tout est dans la dernière commande au dessus)
+**Le code nécessite les packages suivants :** READLINE, MINEFLAYER (tout est dans la dernière commande au dessus)
 
 
 # Usage
