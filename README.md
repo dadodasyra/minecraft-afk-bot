@@ -4,18 +4,15 @@ Il contient un autoclick, un autofeed, un autodeconnect quand il a moins de 3 co
 
 # Installation
 **Installation de Node JS :**
-- Tous OS : *Installation ici : https://nodejs.org/fr/*
-- Installation pour Debian/Linux :
+- Tout OS : Installation [ici](https://nodejs.org/fr/)
+- Installation pour Linux :
 ```
 curl -sL https://deb.nodesource.com/setup_14.x | bash -
 apt-get install -y nodejs
+npm i readline mineflayer, util, fs
 ```
+**Le code nécessite les packages suivants :** FS, READLINE, MINEFLAYER, UTIL (tout est dans la dernière commande au dessus)
 
-**Installation des package nécessaire :**
-- FS : `npm i fs`
-- READLINE : `npm i readline`
-- MINEFLAYER : `npm i mineflayer`
-- UTIL : `npm i util`
 
 # Usage
 **Linux (recommandé):**
@@ -23,11 +20,12 @@ apt-get install -y nodejs
 - Dans le répertoire ou se trouve bot.js et start.sh, executé ./start.sh 
 
 **Windows (restart & auto reconnect généralement non-supporté):**
-- Dans le répertore du bot via un cmd executé node bot.js
+- N'oubliez pas d'installer toutes les dépendances via `npm i readline mineflayer, util, fs` 
+- Dans le répertore du bot via un cmd executé `node bot.js`
 OU *Pour l'auto connect et le restart*
 - Installer Cygwin
 - Accéder au répertoire du bot via Cygwin terminal `cd C:/Users/dadodasyra/Downloads` (remplacer les \ par des / si vous en avez)
-- Executé `sh start.sh` dans un screen
+- Executer `sh start.sh` dans un screen
 
 **MACOS :**
 - Pas de tuto disponible mais l'installation est a peu près similaire à Linux
