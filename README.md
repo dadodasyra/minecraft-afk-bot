@@ -30,7 +30,7 @@ OU *Pour l'auto connect et le restart*
 - Executé `sh start.sh` dans un screen
 
 **MACOS :**
-- T'as cru quoi
+- Pas de tuto disponible mais l'installation est a peu près similaire à Linux
 
 # Commandes
 - `/autoclick [temps en ms]` Démarre un autoclick avec le temps indiqué ou 700 ms de base, /!\ L'autoclick peux taper a travers les blocks + bypass la limite de cps client + à 360°. L'autoclick tape uniquement les mobs (il vérifie l'entitée la plus proche puis vérifie si c'est un mob, dans le cas ou une autre entitée passive est plus proche du joueur le mob hostile ne sera pas tapé)
