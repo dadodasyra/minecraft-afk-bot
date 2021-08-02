@@ -1,9 +1,19 @@
 {
+	"user":{
+		"username":"MAIL",
+		"pass":"MDP"
+	},
+
+	"server":{
+		"address":"histeria.fr",
+		"port":"25565"
+	},
+
 	"toggle":{
 		"autodisconnect":{
 			"toggledisconnect":true,
 			"togglemsg":false,
-			"msg":"J'ai actuellement moins de 3 coeurs donc jvais deco, rip, pinger moi sur discord pls",
+			"msg":"J'ai actuellement moins de 3 coeurs donc jvais deco, rip, pingez moi sur discord pls",
 
 			"_comment":"Les coeurs sont entre 0 et 20",
 			"health":5
@@ -13,17 +23,9 @@
 			"_comment":"Slots entre 0 et 8",
 			"autofeedslot":8
 		},
-		"_comment":"Autoreconnect lors d'un kick ou d'une redem serveur",
+		"_comment": "Le bot va par défaut lors de sa connexion être en train de s'accroupir",
+		"sneakbydefault": true,
+		"__comment":"Autoreconnect lors d'un kick ou d'une redem serveur",
 		"autoreconnect": true
-	},
-
-	"user":{
-		"username":"MAIL",
-		"pass":"MDP"
-	},
-
-	"server":{
-		"address":"histeria.fr",
-		"port":"25565"
 	}
 }
